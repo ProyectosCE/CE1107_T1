@@ -58,3 +58,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE DFlipFlop2bit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE BCDDecoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DisplayDriver.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Decoder2.sv
