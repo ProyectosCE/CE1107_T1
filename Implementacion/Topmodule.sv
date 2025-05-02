@@ -2,80 +2,76 @@
 // Topmodule.sv
 // Descripción: Módulo superior que integra todos los componentes del sistema.
 //-----------------------------------------------------------------------------
+
 module Topmodule (
-    input  logic        CLOCK_50,        // Reloj de la FPGA 
-    input  logic [9:0]  SW,              // Switches (SW[9:0])
-    input  logic [1:0]  KEY,             // Push buttons (KEY[1] = reset, KEY[0] = clk)
-    output logic [6:0]  HEX0,            // Display de 7 segmentos más a la derecha
-    output logic [9:0]  LED              // LEDs de la FPGA
+    input  logic        CLOCK_50,
+    input  logic [9:0]  SW,
+    input  logic [1:0]  KEY,
+    output logic [6:0]  HEX0,
+    output logic [9:0]  LED
 );
+    // Entradas A (izquierda a derecha)
+    logic [1:0] A;
+    assign A[0] = SW[1]; // A0
+    assign A[1] = SW[0]; // A1
 
-    // Entradas A directamente de los switches (izquierda a derecha)
-    logic A0, A1;
-    assign A0 = SW[1];  // SW[1] -> A0
-    assign A1 = SW[0];  // SW[0] -> A1
+    // Entradas B (derecha a izquierda)
+    logic [1:0] B_input;
+    assign B_input[0] = SW[9]; // B0
+    assign B_input[1] = SW[8]; // B1
 
-    // Entradas B desde los switches (derecha a izquierda)
-    logic B0_in, B1_in;
-    assign B0_in = SW[9]; // SW[9] -> B0
-    assign B1_in = SW[8]; // SW[8] -> B1
+    // Salida del registro (Q)
+    logic [1:0] B_reg;
 
-    // Salidas del registro tipo D (para B0 y B1)
-    logic B0_reg, B1_reg;
+    // Salida de decodificador 1 (A y B para BCD)
+    logic [1:0] AB_out;
 
-    // Salida del decodificador 1 (X)
-    logic X;
-
-    // Señales para el display
+    // Entrada para el display BCD (A, B, 0, 0)
     logic [3:0] bcd_input;
+    assign bcd_input = {AB_out, 2'b00};
+
+    // Salida a segmentos
     logic [6:0] seg;
 
-    // Salida del decodificador 2 (LED[0])
+    // LED del decodificador 2
     logic led_dec2;
 
-    //--- Instancia del registro tipo D (almacena B0 y B1) ---
-    DFlipFlopRegister reg_b (
-        .clk(~KEY[0]),       // KEY[0] como CLK (activo en flanco positivo)
-        .reset(~KEY[1]),     // KEY[1] como RESET (activo en bajo)
-        .D0(B0_in),
-        .D1(B1_in),
-        .Q0(B0_reg),
-        .Q1(B1_reg)
+    // Registro tipo D
+    DFlipFlop2bit reg_b (
+        .clk(~KEY[0]),
+        .rst(~KEY[1]),
+        .D(B_input),
+        .Q(B_reg)
     );
 
-    //--- Decodificador 1 ---
+    // Decodificador 1
     Decoder1 dec1_inst (
-        .A0(A0),
-        .A1(A1),
-        .B0(B0_reg),
-        .B1(B1_reg),
-        .X(X)
+        .A_input(A),
+        .B_input(B_reg),
+        .AB_out(AB_out)
     );
 
-    //--- BCD Generator ---
-    BCDGenerator bcd_inst (
-        .A0(A0),
-        .A1(A1),
-        .B0(B0_reg),
-        .B1(B1_reg),
-        .bcd(bcd_input)
-    );
-
-    //--- Display de 7 segmentos ---
-    DisplayDriver display_inst (
-        .bcd(bcd_input),
+    // BCD Decoder
+    BCDDecoder bcd_inst (
+        .in_bcd(bcd_input),
         .seg(seg)
     );
 
-    assign HEX0 = ~seg;  // Display activo bajo
+    // Display Driver
+    DisplayDriver display_inst (
+        .seg(seg),
+        .HEX0(HEX0)
+    );
 
-    //--- Decodificador 2 ---
+    // Decodificador 2
     Decoder2 dec2_inst (
-        .A0(A0),
-        .A1(A1),
+        .A0(A[0]),
+        .A1(A[1]),
         .led_out(led_dec2)
     );
 
+    // LED0 activo según Decoder2
     assign LED[0] = led_dec2;
+
 
 endmodule
