@@ -7,7 +7,7 @@
 module Decoder2 (
     input  logic A0,
     input  logic A1,
-    output logic desacople_out // GPIO output (ej. GPIO_1[2])
+    output logic desacople_out // GPIO output 
 );
 
     assign led_out = A0 ^ A1;
