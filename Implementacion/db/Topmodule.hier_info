@@ -1,34 +1,20 @@
 |Topmodule
 CLOCK_50 => ~NO_FANOUT~
-SW[0] => A[1].IN2
-SW[1] => A[0].IN2
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => ~NO_FANOUT~
-SW[7] => ~NO_FANOUT~
-SW[8] => B_input[1].IN1
-SW[9] => B_input[0].IN1
-KEY[0] => _.IN1
-KEY[1] => _.IN1
-HEX0[0] <= DisplayDriver:display_inst.HEX0
-HEX0[1] <= DisplayDriver:display_inst.HEX0
-HEX0[2] <= DisplayDriver:display_inst.HEX0
-HEX0[3] <= DisplayDriver:display_inst.HEX0
-HEX0[4] <= DisplayDriver:display_inst.HEX0
-HEX0[5] <= DisplayDriver:display_inst.HEX0
-HEX0[6] <= DisplayDriver:display_inst.HEX0
-LED[0] <= Decoder2:dec2_inst.led_out
-LED[1] <= <GND>
-LED[2] <= <GND>
-LED[3] <= <GND>
-LED[4] <= <GND>
-LED[5] <= <GND>
-LED[6] <= <GND>
-LED[7] <= <GND>
-LED[8] <= <GND>
-LED[9] <= <GND>
+GPIO_1[0] => A[0].IN2
+GPIO_1[1] => A[1].IN2
+GPIO_1[2] => B_input[0].IN1
+GPIO_1[3] => B_input[1].IN1
+GPIO_1[4] => clk_gpio.IN1
+GPIO_1[5] => rst_gpio.IN1
+GPIO_1[6] => ~NO_FANOUT~
+HEX0[0] << DisplayDriver:display_inst.HEX0
+HEX0[1] << DisplayDriver:display_inst.HEX0
+HEX0[2] << DisplayDriver:display_inst.HEX0
+HEX0[3] << DisplayDriver:display_inst.HEX0
+HEX0[4] << DisplayDriver:display_inst.HEX0
+HEX0[5] << DisplayDriver:display_inst.HEX0
+HEX0[6] << DisplayDriver:display_inst.HEX0
+GPIO_1_OUT << Decoder2:dec2_inst.desacople_out
 
 
 |Topmodule|DFlipFlop2bit:reg_b
@@ -93,8 +79,8 @@ HEX0[6] <= seg[6].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topmodule|Decoder2:dec2_inst
-A0 => led_out.IN0
-A1 => led_out.IN1
-led_out <= led_out.DB_MAX_OUTPUT_PORT_TYPE
+A0 => desacople_out.IN0
+A1 => desacople_out.IN1
+desacople_out <= desacople_out.DB_MAX_OUTPUT_PORT_TYPE
 
 

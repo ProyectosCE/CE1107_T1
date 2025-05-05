@@ -10,6 +10,6 @@ module Decoder2 (
     output logic desacople_out // GPIO output 
 );
 
-    assign led_out = A0 ^ A1;
+    assign desacople_out = A0 ^ A1;
 
 endmodule

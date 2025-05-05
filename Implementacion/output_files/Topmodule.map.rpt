@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topmodule
-Thu May  1 19:16:13 2025
+Sun May  4 19:15:50 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -44,14 +44,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May  1 19:16:13 2025          ;
+; Analysis & Synthesis Status     ; Successful - Sun May  4 19:15:50 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Topmodule                                      ;
 ; Top-level Entity Name           ; Topmodule                                      ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
 ; Total registers                 ; 2                                              ;
-; Total pins                      ; 30                                             ;
+; Total pins                      ; 16                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -197,14 +197,14 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                ;
 ; Dedicated logic registers                   ; 2                              ;
 ;                                             ;                                ;
-; I/O pins                                    ; 30                             ;
+; I/O pins                                    ; 16                             ;
 ;                                             ;                                ;
 ; Total DSP Blocks                            ; 0                              ;
 ;                                             ;                                ;
 ; Maximum fan-out node                        ; BCDDecoder:bcd_inst|Decoder1~0 ;
 ; Maximum fan-out                             ; 6                              ;
-; Total fan-out                               ; 49                             ;
-; Average fan-out                             ; 0.77                           ;
+; Total fan-out                               ; 35                             ;
+; Average fan-out                             ; 0.97                           ;
 +---------------------------------------------+--------------------------------+
 
 
@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+---------------+--------------+
-; |Topmodule                 ; 2 (0)               ; 2 (0)                     ; 0                 ; 0          ; 30   ; 0            ; |Topmodule                     ; Topmodule     ; work         ;
+; |Topmodule                 ; 2 (0)               ; 2 (0)                     ; 0                 ; 0          ; 16   ; 0            ; |Topmodule                     ; Topmodule     ; work         ;
 ;    |BCDDecoder:bcd_inst|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|BCDDecoder:bcd_inst ; BCDDecoder    ; work         ;
 ;    |DFlipFlop2bit:reg_b|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|DFlipFlop2bit:reg_b ; DFlipFlop2bit ; work         ;
 ;    |Decoder2:dec2_inst|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|Decoder2:dec2_inst  ; Decoder2      ; work         ;
@@ -258,7 +258,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 1                           ;
 ;         4 data inputs ; 1                           ;
-; boundary_port         ; 30                          ;
+; boundary_port         ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
 ; Average LUT depth     ; 1.08                        ;
@@ -280,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu May  1 19:16:00 2025
+    Info: Processing started: Sun May  4 19:15:38 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off T1_CE1107_2025 -c Topmodule
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -297,42 +297,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file decoder
 Info (12021): Found 1 design units, including 1 entities, in source file topmodule.sv
     Info (12023): Found entity 1: Topmodule File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 6
 Info (12127): Elaborating entity "Topmodule" for the top level hierarchy
-Warning (10034): Output port "LED[9..1]" at Topmodule.sv(12) has no driver File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-Info (12128): Elaborating entity "DFlipFlop2bit" for hierarchy "DFlipFlop2bit:reg_b" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 45
-Info (12128): Elaborating entity "Decoder1" for hierarchy "Decoder1:dec1_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 52
-Info (12128): Elaborating entity "BCDDecoder" for hierarchy "BCDDecoder:bcd_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 58
-Info (12128): Elaborating entity "DisplayDriver" for hierarchy "DisplayDriver:display_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 64
-Info (12128): Elaborating entity "Decoder2" for hierarchy "Decoder2:dec2_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 71
+Info (12128): Elaborating entity "DFlipFlop2bit" for hierarchy "DFlipFlop2bit:reg_b" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 50
+Info (12128): Elaborating entity "Decoder1" for hierarchy "Decoder1:dec1_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 57
+Info (12128): Elaborating entity "BCDDecoder" for hierarchy "BCDDecoder:bcd_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 63
+Info (12128): Elaborating entity "DisplayDriver" for hierarchy "DisplayDriver:display_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 69
+Info (12128): Elaborating entity "Decoder2" for hierarchy "Decoder2:dec2_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 76
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 10
-    Warning (13410): Pin "LED[1]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[2]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[3]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[4]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[5]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[7]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[8]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
-    Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 12
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 7
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-Info (21057): Implemented 34 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 17 output pins
+    Warning (15610): No output dependent on input pin "GPIO_1[6]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
+Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 8 output pins
     Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Thu May  1 19:16:13 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Sun May  4 19:15:50 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:30
 
 
