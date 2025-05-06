@@ -3,7 +3,7 @@ A[0] => A[0].IN1
 A[1] => A[1].IN1
 A[2] => A[2].IN1
 A[3] => A[3].IN1
-rst => rst.IN2
+inrst => rst.IN2
 clk => clk.IN2
 Out_M << desacople:desa_inst.y
 seg[0] << BCD_seven_seg:seven_seg_inst.seg0

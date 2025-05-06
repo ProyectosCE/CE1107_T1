@@ -36,7 +36,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "inrst",
 					"strict" : false
 				},
 				{
