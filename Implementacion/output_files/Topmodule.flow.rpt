@@ -1,5 +1,5 @@
 Flow report for Topmodule
-Mon May 05 22:06:10 2025
+Mon May 05 22:49:21 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon May 05 22:06:04 2025       ;
+; Flow Status                     ; Successful - Mon May 05 22:49:15 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Topmodule                                   ;
 ; Top-level Entity Name           ; Topmodule                                   ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/05/2025 22:05:10 ;
+; Start date & time ; 05/05/2025 22:48:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Topmodule           ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 153951931180250.174650431021260        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 153951931180250.174650690404312        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -99,11 +99,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4821 MB             ; 00:00:24                           ;
-; Fitter               ; 00:00:33     ; 1.0                     ; 6543 MB             ; 00:01:03                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4825 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 5131 MB             ; 00:00:05                           ;
-; Total                ; 00:00:57     ; --                      ; --                  ; 00:01:39                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4821 MB             ; 00:00:22                           ;
+; Fitter               ; 00:00:32     ; 1.0                     ; 6493 MB             ; 00:00:58                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4827 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 5104 MB             ; 00:00:05                           ;
+; Total                ; 00:00:55     ; --                      ; --                  ; 00:01:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topmodule
-Mon May 05 22:05:21 2025
+Mon May 05 22:48:35 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 05 22:05:21 2025       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 05 22:48:34 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Topmodule                                   ;
 ; Top-level Entity Name           ; Topmodule                                   ;
@@ -296,7 +296,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 05 22:05:09 2025
+    Info: Processing started: Mon May 05 22:48:23 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off T1_CE1107_2025 -c Topmodule
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -323,11 +323,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file topmodu
 Info (12021): Found 1 design units, including 1 entities, in source file desacople.sv
     Info (12023): Found entity 1: desacople File: C:/Users/josee/CE1107_T1/Implementacion/desacople.sv Line: 1
 Info (12127): Elaborating entity "Topmodule" for the top level hierarchy
-Info (12128): Elaborating entity "Enco_Four_Two" for hierarchy "Enco_Four_Two:enco_ins" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 23
-Info (12128): Elaborating entity "Enco_Sum" for hierarchy "Enco_Sum:inst_Enco_sum" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 32
-Info (12128): Elaborating entity "Flip_Flop_D" for hierarchy "Flip_Flop_D:flip_flop0" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 41
-Info (12128): Elaborating entity "BCD_seven_seg" for hierarchy "BCD_seven_seg:seven_seg_inst" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 54
-Info (12128): Elaborating entity "desacople" for hierarchy "desacople:desa_inst" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 59
+Info (12128): Elaborating entity "Enco_Four_Two" for hierarchy "Enco_Four_Two:enco_ins" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 21
+Info (12128): Elaborating entity "Enco_Sum" for hierarchy "Enco_Sum:inst_Enco_sum" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 30
+Info (12128): Elaborating entity "Flip_Flop_D" for hierarchy "Flip_Flop_D:flip_flop0" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 39
+Info (12128): Elaborating entity "BCD_seven_seg" for hierarchy "BCD_seven_seg:seven_seg_inst" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 52
+Info (12128): Elaborating entity "desacople" for hierarchy "desacople:desa_inst" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 57
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "seg[5]" is stuck at GND File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 12
 Info (286030): Timing-Driven Synthesis is running
@@ -341,8 +341,8 @@ Info (21057): Implemented 23 device resources after synthesis - the final resour
     Info (21061): Implemented 9 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Mon May 05 22:05:21 2025
+    Info: Processing ended: Mon May 05 22:48:35 2025
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:22
 
 

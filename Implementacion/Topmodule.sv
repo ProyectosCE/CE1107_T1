@@ -5,14 +5,12 @@
 
 module Topmodule (
 input [3:0] A,
-input inrst,clk,
+input rst,clk,
 output logic Out_M,
 output [6:0] seg
 
 );
-logic rst;
 
-assign rst = ~inrst;
 
 logic [1:0] enco_for_two_out;
 
