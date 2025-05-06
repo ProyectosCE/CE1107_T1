@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Topmodule
-Sun May  4 19:15:50 2025
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Mon May 05 22:05:21 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -13,20 +13,21 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "BCDDecoder:bcd_inst"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "BCD_seven_seg:seven_seg_inst"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -36,32 +37,31 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May  4 19:15:50 2025          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; Topmodule                                      ;
-; Top-level Entity Name           ; Topmodule                                      ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 2                                              ;
-; Total pins                      ; 16                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon May 05 22:05:21 2025       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Topmodule                                   ;
+; Top-level Entity Name           ; Topmodule                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 14                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
 ; Top-level entity name                                                           ; Topmodule          ; Topmodule          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -157,7 +157,7 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -167,58 +167,74 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; DFlipFlop2bit.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/DFlipFlop2bit.sv ;         ;
-; Decoder1.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Decoder1.sv      ;         ;
-; BCDDecoder.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/BCDDecoder.sv    ;         ;
-; DisplayDriver.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/DisplayDriver.sv ;         ;
-; Decoder2.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Decoder2.sv      ;         ;
-; Topmodule.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv     ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------+---------+
+; Flip_Flip_D.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/josee/CE1107_T1/Implementacion/Flip_Flip_D.sv   ;         ;
+; Enco_Sum.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/josee/CE1107_T1/Implementacion/Enco_Sum.sv      ;         ;
+; Enco_Four_Two.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/josee/CE1107_T1/Implementacion/Enco_Four_Two.sv ;         ;
+; BCD_seven_seg.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/josee/CE1107_T1/Implementacion/BCD_seven_seg.sv ;         ;
+; Topmodule.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv     ;         ;
+; desacople.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/josee/CE1107_T1/Implementacion/desacople.sv     ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                  ;
-+---------------------------------------------+--------------------------------+
-; Resource                                    ; Usage                          ;
-+---------------------------------------------+--------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2                              ;
-;                                             ;                                ;
-; Combinational ALUT usage for logic          ; 2                              ;
-;     -- 7 input functions                    ; 0                              ;
-;     -- 6 input functions                    ; 0                              ;
-;     -- 5 input functions                    ; 0                              ;
-;     -- 4 input functions                    ; 1                              ;
-;     -- <=3 input functions                  ; 1                              ;
-;                                             ;                                ;
-; Dedicated logic registers                   ; 2                              ;
-;                                             ;                                ;
-; I/O pins                                    ; 16                             ;
-;                                             ;                                ;
-; Total DSP Blocks                            ; 0                              ;
-;                                             ;                                ;
-; Maximum fan-out node                        ; BCDDecoder:bcd_inst|Decoder1~0 ;
-; Maximum fan-out                             ; 6                              ;
-; Total fan-out                               ; 35                             ;
-; Average fan-out                             ; 0.97                           ;
-+---------------------------------------------+--------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                               ;
++---------------------------------------------+-----------------------------+
+; Resource                                    ; Usage                       ;
++---------------------------------------------+-----------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 5                           ;
+;                                             ;                             ;
+; Combinational ALUT usage for logic          ; 9                           ;
+;     -- 7 input functions                    ; 0                           ;
+;     -- 6 input functions                    ; 1                           ;
+;     -- 5 input functions                    ; 1                           ;
+;     -- 4 input functions                    ; 3                           ;
+;     -- <=3 input functions                  ; 4                           ;
+;                                             ;                             ;
+; Dedicated logic registers                   ; 0                           ;
+;                                             ;                             ;
+; I/O pins                                    ; 14                          ;
+;                                             ;                             ;
+; Total DSP Blocks                            ; 0                           ;
+;                                             ;                             ;
+; Maximum fan-out node                        ; Flip_Flop_D:flip_flop0|Qs~0 ;
+; Maximum fan-out                             ; 8                           ;
+; Total fan-out                               ; 52                          ;
+; Average fan-out                             ; 1.41                        ;
++---------------------------------------------+-----------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+---------------+--------------+
-; |Topmodule                 ; 2 (0)               ; 2 (0)                     ; 0                 ; 0          ; 16   ; 0            ; |Topmodule                     ; Topmodule     ; work         ;
-;    |BCDDecoder:bcd_inst|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|BCDDecoder:bcd_inst ; BCDDecoder    ; work         ;
-;    |DFlipFlop2bit:reg_b|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|DFlipFlop2bit:reg_b ; DFlipFlop2bit ; work         ;
-;    |Decoder2:dec2_inst|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|Decoder2:dec2_inst  ; Decoder2      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+---------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name   ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+---------------+--------------+
+; |Topmodule                        ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 14   ; 0            ; |Topmodule                              ; Topmodule     ; work         ;
+;    |BCD_seven_seg:seven_seg_inst| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|BCD_seven_seg:seven_seg_inst ; BCD_seven_seg ; work         ;
+;    |Enco_Sum:inst_Enco_sum|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|Enco_Sum:inst_Enco_sum       ; Enco_Sum      ; work         ;
+;    |Flip_Flop_D:flip_flop0|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|Flip_Flop_D:flip_flop0       ; Flip_Flop_D   ; work         ;
+;    |Flip_Flop_D:flip_flop1|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|Flip_Flop_D:flip_flop1       ; Flip_Flop_D   ; work         ;
+;    |desacople:desa_inst|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Topmodule|desacople:desa_inst          ; desacople     ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; Flip_Flop_D:flip_flop0|Q~0                             ;   ;
+; Flip_Flop_D:flip_flop1|Q~0                             ;   ;
+; Flip_Flop_D:flip_flop0|Re~1                            ;   ;
+; Flip_Flop_D:flip_flop1|Re~1                            ;   ;
+; Number of logic cells representing combinational loops ; 4 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -226,23 +242,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2     ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------+
-; Port Connectivity Checks: "BCDDecoder:bcd_inst" ;
-+--------------+-------+----------+---------------+
-; Port         ; Type  ; Severity ; Details       ;
-+--------------+-------+----------+---------------+
-; in_bcd[1..0] ; Input ; Info     ; Stuck at GND  ;
-+--------------+-------+----------+---------------+
++----------------------------------------------------------+
+; Port Connectivity Checks: "BCD_seven_seg:seven_seg_inst" ;
++---------+-------+----------+-----------------------------+
+; Port    ; Type  ; Severity ; Details                     ;
++---------+-------+----------+-----------------------------+
+; a[3..2] ; Input ; Info     ; Stuck at GND                ;
++---------+-------+----------+-----------------------------+
 
 
 +-----------------------------------------------------+
@@ -250,18 +266,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2                           ;
-;     CLR               ; 2                           ;
-; arriav_lcell_comb     ; 4                           ;
-;     normal            ; 4                           ;
+; arriav_lcell_comb     ; 14                          ;
+;     normal            ; 14                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
-; boundary_port         ; 16                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 4                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 1                           ;
+; boundary_port         ; 14                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.08                        ;
+; Average LUT depth     ; 1.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -279,45 +295,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun May  4 19:15:38 2025
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon May 05 22:05:09 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off T1_CE1107_2025 -c Topmodule
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file flip_flip_d.sv
+    Info (12023): Found entity 1: Flip_Flop_D File: C:/Users/josee/CE1107_T1/Implementacion/Flip_Flip_D.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enco_sum.sv
+    Info (12023): Found entity 1: Enco_Sum File: C:/Users/josee/CE1107_T1/Implementacion/Enco_Sum.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file enco_four_two.sv
+    Info (12023): Found entity 1: Enco_Four_Two File: C:/Users/josee/CE1107_T1/Implementacion/Enco_Four_Two.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_seven_seg.sv
+    Info (12023): Found entity 1: BCD_seven_seg File: C:/Users/josee/CE1107_T1/Implementacion/BCD_seven_seg.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dflipflop2bit.sv
-    Info (12023): Found entity 1: DFlipFlop2bit File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/DFlipFlop2bit.sv Line: 7
+    Info (12023): Found entity 1: DFlipFlop2bit File: C:/Users/josee/CE1107_T1/Implementacion/DFlipFlop2bit.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file decoder1.sv
-    Info (12023): Found entity 1: Decoder1 File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Decoder1.sv Line: 7
+    Info (12023): Found entity 1: Decoder1 File: C:/Users/josee/CE1107_T1/Implementacion/Decoder1.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file bcddecoder.sv
-    Info (12023): Found entity 1: BCDDecoder File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/BCDDecoder.sv Line: 7
+    Info (12023): Found entity 1: BCDDecoder File: C:/Users/josee/CE1107_T1/Implementacion/BCDDecoder.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file displaydriver.sv
-    Info (12023): Found entity 1: DisplayDriver File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/DisplayDriver.sv Line: 7
+    Info (12023): Found entity 1: DisplayDriver File: C:/Users/josee/CE1107_T1/Implementacion/DisplayDriver.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file decoder2.sv
-    Info (12023): Found entity 1: Decoder2 File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Decoder2.sv Line: 7
+    Info (12023): Found entity 1: Decoder2 File: C:/Users/josee/CE1107_T1/Implementacion/Decoder2.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file topmodule.sv
-    Info (12023): Found entity 1: Topmodule File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 6
+    Info (12023): Found entity 1: Topmodule File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file desacople.sv
+    Info (12023): Found entity 1: desacople File: C:/Users/josee/CE1107_T1/Implementacion/desacople.sv Line: 1
 Info (12127): Elaborating entity "Topmodule" for the top level hierarchy
-Info (12128): Elaborating entity "DFlipFlop2bit" for hierarchy "DFlipFlop2bit:reg_b" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 50
-Info (12128): Elaborating entity "Decoder1" for hierarchy "Decoder1:dec1_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 57
-Info (12128): Elaborating entity "BCDDecoder" for hierarchy "BCDDecoder:bcd_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 63
-Info (12128): Elaborating entity "DisplayDriver" for hierarchy "DisplayDriver:display_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 69
-Info (12128): Elaborating entity "Decoder2" for hierarchy "Decoder2:dec2_inst" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 76
+Info (12128): Elaborating entity "Enco_Four_Two" for hierarchy "Enco_Four_Two:enco_ins" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 23
+Info (12128): Elaborating entity "Enco_Sum" for hierarchy "Enco_Sum:inst_Enco_sum" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 32
+Info (12128): Elaborating entity "Flip_Flop_D" for hierarchy "Flip_Flop_D:flip_flop0" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 41
+Info (12128): Elaborating entity "BCD_seven_seg" for hierarchy "BCD_seven_seg:seven_seg_inst" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 54
+Info (12128): Elaborating entity "desacople" for hierarchy "desacople:desa_inst" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 59
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 9
+    Warning (13410): Pin "seg[5]" is stuck at GND File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 7
-    Warning (15610): No output dependent on input pin "GPIO_1[6]" File: C:/Users/joseb/Documents/GitHub/CE1107_T1/Implementacion/Topmodule.sv Line: 8
-Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "A[0]" File: C:/Users/josee/CE1107_T1/Implementacion/Topmodule.sv Line: 7
+Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4837 megabytes
-    Info: Processing ended: Sun May  4 19:15:50 2025
+    Info (21061): Implemented 9 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Mon May 05 22:05:21 2025
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Total CPU time (on all processors): 00:00:24
 
 

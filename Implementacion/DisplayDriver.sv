@@ -10,6 +10,6 @@ module DisplayDriver (
 );
 
     // En caso de display activo bajo:
-    assign HEX0 = ~seg;
+    assign HEX0 = seg;
 
 endmodule

@@ -4,78 +4,60 @@
 //-----------------------------------------------------------------------------
 
 module Topmodule (
-    input  logic        CLOCK_50,
-    input  logic [6:0]  GPIO_1,        // GPIOs para entradas y salidas externas
-    output logic [6:0]  HEX0,          // Display de 7 segmentos más a la derecha
-    output logic        GPIO_1_OUT     // GPIO de salida para el desacople
+input [3:0] A,
+input inrst,clk,
+output logic Out_M,
+output [6:0] seg
+
+);
+logic rst;
+
+assign rst = ~inrst;
+
+logic [1:0] enco_for_two_out;
+
+Enco_Four_Two enco_ins(
+.A(A),
+.B(enco_for_two_out)
+
 );
 
-    // Entradas A desde sensores fotoresistivos conectados a GPIOs
-    logic [1:0] A;
-    assign A[0] = GPIO_1[0]; // A0 desde GPIO_1[0]
-    assign A[1] = GPIO_1[1]; // A1 desde GPIO_1[1]
+logic [1:0] Out_Sum;
 
-    // Entradas B desde sensores fotoresistivos conectados a GPIOs
-    logic [1:0] B_input;
-    assign B_input[0] = GPIO_1[2]; // B0 desde GPIO_1[2]
-    assign B_input[1] = GPIO_1[3]; // B1 desde GPIO_1[3]
+Enco_Sum inst_Enco_sum(
+    .A(enco_for_two_out),
+    .B({z1,z0}),
+    .C(Out_Sum)
 
-    // Entradas para reloj y reset desde botones conectados a GPIOs con pull-down
-    logic clk_gpio, rst_gpio;
-    assign clk_gpio = GPIO_1[4]; // CLK desde GPIO_1[4]
-    assign rst_gpio = GPIO_1[5]; // RESET desde GPIO_1[5]
+);
 
-    // Salida del registro (Q)
-    logic [1:0] B_reg;
+logic z1,z0;
 
-    // Salida de decodificador 1 (A y B para BCD)
-    logic [1:0] AB_out;
+Flip_Flop_D flip_flop0 (
+    .D(Out_Sum[0]),
+    .clk(clk),
+    .rst(rst), 
+    .Q(z0)
+);
 
-    // Entrada para el display BCD (A, B, 0, 0)
-    logic [3:0] bcd_input;
-    assign bcd_input = {AB_out, 2'b00};
+Flip_Flop_D  flip_flop1(
+    .D(Out_Sum[1]),
+    .clk(clk),
+    .rst(rst), 
+    .Q(z1)
+);
 
-    // Salida a segmentos
-    logic [6:0] seg;
+BCD_seven_seg seven_seg_inst(
+	.a({2'b00,z1,z0}),
+	.seg0(seg)
 
-    // Señal para el desacople (GPIO de salida)
-    logic desacople_out;
+);
 
-    // Registro tipo D
-    DFlipFlop2bit reg_b (
-        .clk(clk_gpio),
-        .rst(rst_gpio),
-        .D(B_input),
-        .Q(B_reg)
-    );
-
-    // Decodificador 1
-    Decoder1 dec1_inst (
-        .A_input(A),
-        .B_input(B_reg),
-        .AB_out(AB_out)
-    );
-
-    // BCD Decoder
-    BCDDecoder bcd_inst (
-        .in_bcd(bcd_input),
-        .seg(seg)
-    );
-
-    // Display Driver
-    DisplayDriver display_inst (
-        .seg(seg),
-        .HEX0(HEX0)
-    );
-
-    // Decodificador 2
-    Decoder2 dec2_inst (
-        .A0(A[0]),
-        .A1(A[1]),
-        .desacople_out(desacople_out)
-    );
-
-    // Salida hacia transistor de desacople (GPIO de salida)
-    assign GPIO_1_OUT = desacople_out; // GPIO de salida para activar motor o LED externo
+desacople desa_inst(
+	.a({z1, z0}),
+	.y(Out_M)
+);
 
 endmodule
+
+   

@@ -42,41 +42,78 @@ set_global_assignment -name DEVICE 5CSXFC6D6F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY Topmodule
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:16:47  MAY 01, 2025"
-set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (SystemVerilog)"
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name BOARD "Cyclone V SoC Development Kit"
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO_1_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX0
+set_global_assignment -name SYSTEMVERILOG_FILE Flip_Flip_D.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Enco_Sum.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Enco_Four_Two.sv
+set_global_assignment -name SYSTEMVERILOG_FILE BCD_seven_seg.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DFlipFlop2bit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE BCDDecoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DisplayDriver.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder2.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Topmodule.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to A[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to A[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to A[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to A[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Out_M
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to inrst
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[1]
+set_global_assignment -name SYSTEMVERILOG_FILE desacople.sv
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg[0]
+set_location_assignment PIN_AC30 -to A[3]
+set_location_assignment PIN_AB28 -to A[2]
+set_location_assignment PIN_Y27 -to A[1]
+set_location_assignment PIN_AB30 -to A[0]
+set_location_assignment PIN_AA24 -to Out_M
+set_location_assignment PIN_AJ4 -to clk
+set_location_assignment PIN_AK4 -to inrst
+set_location_assignment PIN_W17 -to seg[6]
+set_location_assignment PIN_V18 -to seg[5]
+set_location_assignment PIN_AG17 -to seg[4]
+set_location_assignment PIN_AG16 -to seg[3]
+set_location_assignment PIN_AH17 -to seg[2]
+set_location_assignment PIN_AG18 -to seg[1]
+set_location_assignment PIN_AH18 -to seg[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to seg
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name BOARD "Cyclone V SoC Development Kit"
-set_location_assignment PIN_W17 -to HEX0[0]
-set_location_assignment PIN_V18 -to HEX0[1]
-set_location_assignment PIN_AG17 -to HEX0[2]
-set_location_assignment PIN_AG16 -to HEX0[3]
-set_location_assignment PIN_AH17 -to HEX0[4]
-set_location_assignment PIN_AG18 -to HEX0[5]
-set_location_assignment PIN_AH18 -to HEX0[6]
-set_location_assignment PIN_W15 -to GPIO_1[0]
-set_location_assignment PIN_AK2 -to GPIO_1[1]
-set_location_assignment PIN_Y16 -to GPIO_1[2]
-set_location_assignment PIN_AK3 -to GPIO_1[3]
-set_location_assignment PIN_AJ1 -to GPIO_1[4]
-set_location_assignment PIN_AJ2 -to GPIO_1[5]
-set_location_assignment PIN_AH2 -to GPIO_1[6]
-set_location_assignment PIN_AH3 -to GPIO_1_OUT
